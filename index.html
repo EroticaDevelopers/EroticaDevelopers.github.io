@@ -16,8 +16,16 @@
 </head>
 <body class="body page-index clearfix">
   <section class="presentation">
-    <div id="playButton" class="play-button">
-      <p class="play"><a>PLAY</a></p>
+    <div class="play-options">
+      <div class="play-button play-button-1">
+        <p class="play play-1"><a href="http://st125.u1.videomega.tv/v/75ff00059a8d01bffb5471b750905d78.mp4?st=CAp8Kc9U_VUQ_Djf1GN2vA&amp;hash=O7Y30ufhcAlOy2l8_uoJww">FULL VIDEO</a></p>
+      </div>
+      <div class="play-button play-button-2">
+        <p class="play play-2"><a href="http://v.passionhdmedia.com/content/videos/000/053/183/panda/promo/passionhd_promo_mp4_712_2500.mp4">TEASER</a></p>
+      </div>
+      <div class="play-button play-button-3">
+        <p class="play play-3"><a href="http://v.passionhdmedia.com/content/videos/000/053/183/panda/trailer/mp4_480_18.mp4">TRailer</a></p>
+      </div>
     </div>
     <div class="overlay"></div>
   </section>
@@ -29,9 +37,8 @@
       <p class="text text-4"><a>STUDIOS</a></p>
     </ul>
   </div>
-  <div id="videoplayer" class="player hidden"><video style="width:100%;height:100%; z-index=999" poster="http://i.passionhdmedia.com/content/videos/000/053/183/handtouched_ss/sample_970x545.jpg">
-  <source src="http://v.passionhdmedia.com/content/videos/000/053/183/panda/trailer/mp4_480_18.mp4" 
-          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+  <div id="videoplayer" class="player hidden"><video style="width:100%;height:100%; z-index=999">
+  <source src="" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
 </video></div>
   <section class="latest clearfix">
     <div class="title clearfix">
@@ -68,7 +75,9 @@ function deactivate_player() {
 }
 
 
-$('#playButton').on('click', function() {
+$('.play-button').on('click', function() {
+  $('#videoplayer video source').attr('src', $('a',this).prop('href'));
+  $('#videoplayer video').load();
   activate_player();
 });
 

@@ -1,7 +1,7 @@
 body {
   background-color: rgb(255, 255, 255);
-  font: 400 0.25em/1.38 Helvetica;
-  color: rgb(0, 0, 0);
+  font: 400 1em/1 Helvetica;
+  color: rgb(255, 255, 255);
 }
 
 .ad {
@@ -28,7 +28,7 @@ body {
   position: relative;
   float: left;
   clear: both;
-  z-index: 26;
+  z-index: 31;
   width: 100%;
   height: 50px;
   background-color: rgba(0, 0, 0, 0.68);
@@ -48,7 +48,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 25;
+  z-index: 30;
   width: 100%;
   height: 70px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -63,7 +63,7 @@ body {
 
 .nav-bar .text {
   float: left;
-  font-size: 1em;
+  font-size: 0.25em;
   font-weight: 400;
   line-height: 1.38;
   color: rgb(0, 0, 0);
@@ -85,12 +85,10 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 16;
   margin: auto;
   border: 2px solid rgb(255, 255, 255);
-  font-size: 4em;
+  font-size: 1em;
   font-weight: 400;
-  line-height: 1;
   text-align: center;
   color: rgb(255, 255, 255);
 }
@@ -101,13 +99,19 @@ body {
 
 .play-button {
   position: absolute;
+  width: 226px;
+  height: 70px;
+}
+
+.play-options {
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 17;
-  width: 300px;
-  height: 70px;
+  z-index: 22;
+  width: 46%;
+  height: 188px;
   margin: auto;
 }
 
@@ -116,7 +120,7 @@ body {
   top: 70px;
   left: 0;
   right: 0;
-  z-index: 19;
+  z-index: 24;
   width: 100%;
   height: 470px;
   margin: 0 auto;
@@ -126,7 +130,7 @@ body {
 .presentation {
   position: relative;
   float: left;
-  z-index: 18;
+  z-index: 23;
   width: 100%;
   height: 540px;
   background-image: url('../images/sample_970x545.jpg');
@@ -154,8 +158,38 @@ body {
 .title .text {
   min-height: 36px;
   margin: 0 auto;
-  font: normal 11.25em/1.38 Ailerons;
+  font: normal 2.813em/1.38 Ailerons;
   color: rgb(13, 38, 55);
+}
+
+.play-1 {
+  z-index: 20;
+}
+
+.play-2 {
+  z-index: 18;
+}
+
+.play-3 {
+  z-index: 16;
+}
+
+.play-button-1 {
+  top: 118px;
+  left: 163px;
+  z-index: 21;
+}
+
+.play-button-2 {
+  top: 0;
+  left: 326px;
+  z-index: 19;
+}
+
+.play-button-3 {
+  top: 0;
+  left: 0;
+  z-index: 17;
 }
 
 .story-1 {
@@ -233,7 +267,9 @@ body {
   min-height: 55px;
   margin: 40px 0 0 463px;
   border: 2px solid rgb(0, 0, 0);
-  font: normal 4em/1 Ailerons;
+  font-family: Ailerons;
+  font-size: 1em;
+  font-weight: normal;
   text-align: center;
   color: rgb(0, 0, 0);
 }
