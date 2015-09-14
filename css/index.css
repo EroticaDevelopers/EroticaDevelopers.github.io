@@ -1,16 +1,7 @@
 body {
   background-color: rgb(255, 255, 255);
-  font: 400 1em/1 Helvetica;
+  font: 400 1em/1.38 Helvetica;
   color: rgb(255, 255, 255);
-}
-
-.ad {
-  position: relative;
-  float: left;
-  clear: both;
-  z-index: 1;
-  width: 100%;
-  height: 250px;
 }
 
 .banner {
@@ -18,40 +9,71 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 5;
   width: 950px;
   height: 250px;
   margin: 0 auto;
   overflow: hidden;
 }
 
+/*.container {
+  float: left;
+  clear: both;
+  width: 100%;
+  height: auto;
+}*/
+
 .footer {
   position: relative;
   float: left;
   clear: both;
-  z-index: 31;
+  z-index: 0;
   width: 100%;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.68);
+  background-color: #f1f1f1;
 }
 
-.latest {
+.full-movies {
   position: relative;
   float: left;
   clear: both;
-  z-index: 14;
+  z-index: 4;
+  width: 100%;
+  height: 330px;
+}
+
+.full-movies .title {
+  margin: 0 auto;
+}
+
+/*.latest {
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 24;
   width: 100%;
   height: 900px;
-  background-color: rgba(13, 43, 86, 0.38);
-}
+  background-color: rgb(255, 255, 255);
+}*/
+
+/*.latest .ad {
+  width: 160px;
+  height: 600px;
+}*/
+
+/*.latest .title {
+  float: left;
+  margin: auto;
+}*/
 
 .menu {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 30;
+  z-index: 40;
   width: 100%;
-  height: 70px;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 60px;
+  background-color: rgba(232, 232, 232, 0.6);
 }
 
 .nav-bar {
@@ -73,13 +95,13 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 15;
+  z-index: 25;
   width: 100%;
   height: 540px;
-  background-color: rgba(4, 11, 21, 0.38);
+  background-color: rgba(128, 128, 128, 0.2);
 }
 
-.play {
+/*.play {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -89,19 +111,20 @@ body {
   border: 2px solid rgb(255, 255, 255);
   font-size: 1em;
   font-weight: 400;
+  line-height: 1;
   text-align: center;
   color: rgb(255, 255, 255);
-}
+}*/
 
 .play:hover {
   border-width: 3px;
 }
 
-.play-button {
+/*.play-button {
   position: absolute;
   width: 226px;
   height: 70px;
-}
+}*/
 
 .play-options {
   position: absolute;
@@ -109,7 +132,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 22;
+  z-index: 32;
   width: 46%;
   height: 188px;
   margin: auto;
@@ -117,12 +140,12 @@ body {
 
 .player {
   position: absolute;
-  top: 70px;
+  top: 60px;
   left: 0;
   right: 0;
-  z-index: 24;
+  z-index: 34;
   width: 100%;
-  height: 470px;
+  height: 480px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -130,29 +153,36 @@ body {
 .presentation {
   position: relative;
   float: left;
-  z-index: 23;
+  /*z-index: 33;*/
   width: 100%;
   height: 540px;
-  background-image: url('../images/sample_970x545.jpg');
+  /*background-image: url('../images/sample_970x545.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center center;*/
 }
 
 .story {
   position: relative;
   float: left;
-  width: 25.5833333333%;
-  height: 175px;
+  width: 220px;
+  height: 150px;
+  margin-top: 60px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
+.theater {
+  position: relative;
+  float: left;
+  z-index: 19;
+  width: 70%;
+}
+
 .title {
   width: 235px;
   height: 64px;
-  margin: 20px auto 0;
 }
 
 .title .text {
@@ -162,90 +192,112 @@ body {
   color: rgb(13, 38, 55);
 }
 
+.wrapper {
+  float: left;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.ad-1 {
+  float: left;
+  clear: both;
+}
+
+.ad-2 {
+  float: right;
+}
+
+.ad-3 {
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 6;
+  width: 100%;
+  height: 250px;
+}
+
 .play-1 {
-  z-index: 20;
+  z-index: 30;
 }
 
 .play-2 {
-  z-index: 18;
+  z-index: 28;
 }
 
 .play-3 {
-  z-index: 16;
+  z-index: 26;
 }
 
 .play-button-1 {
   top: 118px;
   left: 163px;
-  z-index: 21;
+  z-index: 31;
 }
 
 .play-button-2 {
   top: 0;
   left: 326px;
-  z-index: 19;
+  z-index: 29;
 }
 
 .play-button-3 {
   top: 0;
   left: 0;
-  z-index: 17;
+  z-index: 27;
 }
 
 .story-1 {
-  clear: both;
-  z-index: 2;
-  margin: 86px 0 0 120px;
+  z-index: 10;
   background-image: url('../images/sample_970x545%20(1).jpg');
 }
 
 .story-2 {
-  z-index: 3;
-  margin: 86px 0 0 19px;
+  z-index: 11;
+  margin-left: 85px;
   background-image: url('../images/sample_970x545(2).jpg');
 }
 
 .story-3 {
-  z-index: 4;
-  margin: 86px 0 0 20px;
+  z-index: 12;
+  margin-left: 91px;
   background-image: url('../images/sample_970x545(2).jpg');
 }
 
 .story-4 {
   clear: both;
-  z-index: 7;
-  margin: 50px 0 0 120px;
+  z-index: 13;
   background-image: url('../images/sample_970x545%20(1).jpg');
 }
 
 .story-5 {
-  z-index: 8;
-  margin: 50px 0 0 19px;
+  z-index: 14;
+  margin-left: 85px;
   background-image: url('../images/sample_970x545(2).jpg');
 }
 
 .story-6 {
-  z-index: 9;
-  margin: 50px 0 0 20px;
+  z-index: 15;
+  margin-left: 91px;
   background-image: url('../images/sample_970x545(2).jpg');
 }
 
 .story-7 {
   clear: both;
-  z-index: 10;
-  margin: 50px 0 0 120px;
+  z-index: 16;
+  margin-left: 2px;
   background-image: url('../images/sample_970x545%20(1).jpg');
 }
 
 .story-8 {
-  z-index: 11;
-  margin: 50px 0 0 19px;
+  z-index: 17;
+  margin-left: 85px;
   background-image: url('../images/sample_970x545(2).jpg');
 }
 
 .story-9 {
-  z-index: 12;
-  margin: 50px 0 0 20px;
+  z-index: 18;
+  margin-left: 91px;
   background-image: url('../images/sample_970x545(2).jpg');
 }
 
@@ -267,14 +319,14 @@ body {
   min-height: 55px;
   margin: 40px 0 0 463px;
   border: 2px solid rgb(0, 0, 0);
-  font-family: Ailerons;
-  font-size: 1em;
-  font-weight: normal;
+  font: normal 1em/1 Ailerons;
   text-align: center;
   color: rgb(0, 0, 0);
 }
 
-.play a {
+/*.play a,
+.play em,
+.play span {
   border-top-width: 0;
   border-right-width: 0;
   border-bottom-width: 0;
@@ -299,7 +351,7 @@ body {
   word-break: normal;
   word-wrap: normal;
   white-space: normal;
-}
+}*/
 
 .text a {
   border-top-width: 0;
@@ -358,7 +410,7 @@ body {
   font-style: normal;
   font-size: 7.5em;
   font-weight: Regular;
-  color: #ffffff;
+  color: #4d4d4d;
 }
 
 .text-4 a {
@@ -366,7 +418,7 @@ body {
   font-style: inherit;
   font-size: 7.5em;
   font-weight: Regular;
-  color: #ffffff;
+  color: #4d4d4d;
 }
 
 .text-6 a {
@@ -378,6 +430,8 @@ body {
 }
 
 .play a:hover,
+.play em:hover,
+.play span:hover,
 .text-6 a:hover {
   font-size: NaNem;
 }

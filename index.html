@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0">
@@ -7,27 +8,42 @@
   <link rel="stylesheet" href="css/standardize.css">
   <link rel="stylesheet" href="css/index-grid.css">
   <link rel="stylesheet" href="css/index.css">
-  <style>
-    .hidden, .hidden:after, .hidden:before {
-    	display: none;
-		}
-  </style>
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react-with-addons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
+  <script src="https://www.parsecdn.com/js/parse-latest.js"></script>
+  <script src="js/dom_manipulation.js"></script>
+  <!-- Now include parse-react.js -->
+  <script src="https://www.parsecdn.com/js/parse-react.js"></script>
+
 </head>
+
 <body class="body page-index clearfix">
-  <section class="presentation">
-    <div class="play-options">
-      <div class="play-button play-button-1">
-        <p class="play play-1"><a href="http://st125.u1.videomega.tv/v/75ff00059a8d01bffb5471b750905d78.mp4?st=CAp8Kc9U_VUQ_Djf1GN2vA&amp;hash=O7Y30ufhcAlOy2l8_uoJww">FULL VIDEO</a></p>
+  <section id=featured class="presentation">
+    <!-- <div id="featureddiv">
+      <img src="../images/sample_970x545.jpg"> </img>
+      <div class="play-options">
+        <div class="row-play-options">
+          <div class="row-play-options-container">
+            <div class="play-button play">
+              <a href="http://v.passionhdmedia.com/content/videos/000/053/183/panda/promo/passionhd_promo_mp4_712_2500.mp4">TEASER</a>
+            </div>
+            <div class="play-button play">
+              <a href="http://v.passionhdmedia.com/content/videos/000/053/183/panda/trailer/mp4_480_18.mp4">Trailer</a>
+            </div>
+          </div>
+        </div>
+        <div class="row-play-options">
+          <div class="row-play-options-container">
+            <div class="play-button play">
+              <a href="http://v.passionhdmedia.com/content/videos/000/053/183/panda/trailer/mp4_480_18.mp4">FULL VIDEO</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="play-button play-button-2">
-        <p class="play play-2"><a href="http://v.passionhdmedia.com/content/videos/000/053/183/panda/promo/passionhd_promo_mp4_712_2500.mp4">TEASER</a></p>
-      </div>
-      <div class="play-button play-button-3">
-        <p class="play play-3"><a href="http://v.passionhdmedia.com/content/videos/000/053/183/panda/trailer/mp4_480_18.mp4">TRailer</a></p>
-      </div>
-    </div>
-    <div class="overlay"></div>
+    </div> -->
+    <!-- <div class="overlay"></div> -->
   </section>
   <div class="menu clearfix">
     <ul class="nav-bar clearfix">
@@ -37,59 +53,48 @@
       <p class="text text-4"><a>STUDIOS</a></p>
     </ul>
   </div>
-  <div id="videoplayer" class="player hidden"><video style="width:100%;height:100%; z-index=999">
-  <source src="" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
-</video></div>
+  <div id="videoplayer" class="player hidden">
+    <video style="width:100%;height:100%; z-index=999">
+      <source src="" type="video/mp4;codecs='avc1.42E01E, mp4a.40.2'" />
+    </video>
+  </div>
   <section class="latest clearfix">
     <div class="title clearfix">
       <p class="text">LATEST VIDEOS</p>
     </div>
-    <div class="story story-1"></div>
-    <div class="story story-2"></div>
-    <div class="story story-3"></div>
-    <div class="story story-4"></div>
-    <div class="story story-5"></div>
-    <div class="story story-6"></div>
-    <div class="story story-7"></div>
-    <div class="story story-8"></div>
-    <div class="story story-9"></div>
-    <p class="text text-6"><a>Load More...</a></p>
+    <div class="container">
+      <div class="ad">
+        <div class="wrapper">
+          <iframe src="http://banners2.fuckyoucash.com/?size=160x600&nats=MzcxNzA6NTc6MTA" width="160" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+      <div id="latest-theater" class="theater clearfix">
+      </div>
+      <div class="ad">
+        <div class="wrapper">
+          <iframe src="http://banners2.fuckyoucash.com/?size=160x600&nats=MzcxNzA6MjoxMA" width="160" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="title clearfix">
+      <p class="text">Load more...</p>
+    </div>
   </section>
-  <section class="ad">
-    <div class="banner"><iframe src="http://banners2.fuckyoucash.com/?size=950x250&nats=MzcxNzA6NTc6MTA" width="950" height="250" frameborder="0" scrolling="no"></iframe></div>
+  <section class="ad ad-3">
+    <div class="wrapper">
+      <iframe src="http://banners2.fuckyoucash.com/?size=950x250&nats=MzcxNzA6NTc6MTA" width="950" height="250" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </section>
+  <section class="full-movies clearfix">
+    <div class="title clearfix">
+      <p class="text">Full movies</p>
+    </div>
+    <div class="container">
+      <div id="parse" class="container"></div>
+    </div>
   </section>
   <div class="footer"></div>
-	<script>
-    function activate_player() {
-  $('.presentation').css('-webkit-filter', 'blur(10px)');
-  // $(this).addClass('hidden');
-  $('#videoplayer').removeClass('hidden');
-  $('#videoplayer video').get(0).play();
-}
-
-function deactivate_player() {
-  $('.presentation').css('-webkit-filter', '');
-  $('#videoplayer').addClass('hidden');
-  $('#videoplayer').removeClass('hidden');
-  $('#videoplayer video').get(0).play();
-}
-
-
-$('.play-button').on('click', function() {
-  $('#videoplayer video source').attr('src', $('a',this).prop('href'));
-  $('#videoplayer video').load();
-  activate_player();
-});
-
-$('#videoplayer video').hover(function toggleControls() {
-  if (this.hasAttribute("controls")) {
-    this.removeAttribute("controls");
-  } else {
-    this.setAttribute("controls", "controls");
-  }
-});
-
-  </script>
- 
+  <script type="text/jsx" src="js/parse_data.js"></script>
 </body>
+
 </html>
