@@ -1,6 +1,6 @@
 //*HELPERS*//
 function activate_player() {
-  $('.presentation').css('-webkit-filter', 'blur(10px)');
+  $('.presentation').css('-webkit-filter', 'blur(2px)');
   $('#videoplayer').removeClass('hidden');
   $('#videoplayer video').get(0).play();
 }
@@ -13,17 +13,17 @@ function deactivate_player() {
 }
 
 //*DOM Manipulation*//
-$('.video-link').click(function(event) {
-  $('#videoplayer video source').attr('src', $('a',this).prop('href'));
-  $('#videoplayer video').load();
-  return false;
-  activate_player();
-});
+// $('.video-link').click(function(event) {
+//   $('#videoplayer video source').attr('src', $('a',this).prop('href'));
+//   $('#videoplayer video').load();
+//   return false;
+//   activate_player();
+// });
 
-$('#videoplayer video').hover(function toggleControls() {
-  if (this.hasAttribute("controls")) {
-    this.removeAttribute("controls");
-  } else {
-    this.setAttribute("controls", "controls");
-  }
-});
+// $('#videoplayer video').hover(function toggleControls() {
+//   if (this.hasAttribute("controls")) {
+//     this.removeAttribute("controls");
+//   } else {
+//     this.setAttribute("controls", "controls");
+//   }
+// });
