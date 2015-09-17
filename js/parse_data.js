@@ -5,6 +5,53 @@ Parse.initialize("XYwe86rF27FL0zSEeNETivcLQ9nyBtniNxh6Swub", "R4C0M1hxn3FGyvRHgZ
 // Parse.initialize("FcavaMqNGXulqDITFSUd3cngJo6ttTctma1r2e3X", "jNfnNnqVxA5djYXg6iYZmWxADD6BRpoGn48ixPsz");
 
 var Full_movie = React.createClass({
+  componentDidMount: function(){
+    // debugger;
+  },
+  componentDidUpdate: function(){
+    // debugger;
+  },
+  getInitialState: function() {
+    return {metadata: ''};
+  },
+  handleClick: function(event) {
+    event.preventDefault();
+    $('#videoplayer video source').attr('src', this.props.url);
+    $('#videoplayer video').load();
+    activate_player(this.props.src);
+  },
+  render: function() {
+    // Render the text of each comment as a list item
+    return (
+      <div style={{
+          'width': '18%',
+          'height': 'auto',
+          'margin': '1%',
+          'float': 'left'
+        }}>
+        <img
+          src={this.props.src}
+          title={this.props.title}
+          url={this.props.url}
+          style={{
+            'object-fit': 'cover',
+            'height': '300px'
+          }}>
+        </img>
+        <p style={{'font' : 'normal 1.5em/1 Ailerons', 'text-align': 'center'}}>
+          <a
+            href='play'
+            style={{'color': '#FF00DC'}}
+            onClick={this.handleClick}>
+            {this.props.title}
+          </a>
+        </p>
+      </div>
+    );
+  }
+});
+
+var Full_movie_gallery = React.createClass({
   mixins: [ParseReact.Mixin], // Enable query subscriptions
   observe: function() {
     // Subscribe to all Comment objects, ordered by creation date
@@ -13,21 +60,18 @@ var Full_movie = React.createClass({
       comments: (new Parse.Query('full_movies')).limit(5)
     };
   },
-
+  handleClick: function(event) {
+    event.preventDefault();
+    $('#videoplayer video source').attr('src', this.props.url);
+    $('#videoplayer video').load();
+    activate_player(this.props.src);
+  },
   render: function() {
     // Render the text of each comment as a list item
     return (
       <ul>
         {this.data.comments.map(function (c) {
-          return <img
-            src={c.img}
-            style={{
-              'width': '18%',
-              'height': '250px',
-              'margin': '1%',
-              'object-fit': 'cover'
-            }}>
-          </img>;
+          return <Full_movie src={c.img} title={c.title} url={c.url} />;
         })}
       </ul>
     );
@@ -35,7 +79,7 @@ var Full_movie = React.createClass({
 });
 
 React.render(
-  <Full_movie/>,
+  <Full_movie_gallery/>,
   document.getElementById('parse')
 );
 
@@ -102,6 +146,7 @@ var Video_gallery = React.createClass({
 
   },
   handleClick: function(event) {
+    event.preventDefault();
     this.setState({
       skip: this.state.skip + this.state.limit,
       limit: this.state.limit
@@ -120,10 +165,10 @@ var Video_gallery = React.createClass({
           <div className="title clearfix">
             <p
               id="load"
-              className="text"
-              onClick={this.handleClick}
               style={{'float': 'left'}}>
-              Load more...
+              <a href='' className="text" onClick={this.handleClick}>
+                Load more...
+              </a>
             </p>
           </div>
         </div>

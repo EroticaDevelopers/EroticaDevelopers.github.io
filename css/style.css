@@ -16,6 +16,7 @@
   height: auto;
   margin-bottom: 20px;
   float: left;
+  width: 100%;
 }
 .latest .title {
   /*float: left;*/
