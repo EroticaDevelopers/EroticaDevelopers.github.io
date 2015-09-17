@@ -53,6 +53,7 @@
   -webkit-box-ordinal-group: 1;
   -moz-box-ordinal-group: 1;
   box-ordinal-group: 1;
+  text-align: center;
 }
 .play-options {
   display: -webkit-box;

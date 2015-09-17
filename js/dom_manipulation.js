@@ -1,6 +1,7 @@
 //*HELPERS*//
-function activate_player() {
+function activate_player(background) {
   $('.presentation').css('-webkit-filter', 'blur(2px)');
+  $('.presentation').css('background-image', 'url('+background+')');
   $('#videoplayer').removeClass('hidden');
   $('#videoplayer video').get(0).play();
 }
@@ -11,6 +12,16 @@ function deactivate_player() {
   $('#videoplayer').removeClass('hidden');
   $('#videoplayer video').get(0).play();
 }
+
+$('#load').on('click', function() {
+  gallery.setState(function(){
+    debugger;
+    return {
+      skip: this.state.skip + this.state.limit,
+      limit: this.state.limit
+    };
+  });
+});
 
 //*DOM Manipulation*//
 // $('.video-link').click(function(event) {
